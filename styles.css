@@ -64,7 +64,7 @@ main {
     border-radius: 10px;
 }
 
-article {
+form {
     background-color: #6cacff;
     padding: 20px;
     margin-bottom: 20px;
@@ -72,4 +72,47 @@ article {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid brown;
     text-align: center ;
+}
+
+.footer {
+    background-color: #39393a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    margin-top: auto;
+    font-family: "Ubuntu Sans Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.footer .social-links a {
+    color: #E0E1DD;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    nav {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    section {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
 }
