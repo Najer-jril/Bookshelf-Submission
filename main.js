@@ -22,6 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         renderBooks();
     }
 
+    function formatDate(dateString) {
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        const date = new Date(dateString);
+        return date.toLocaleDateString('id-ID', options);
+    }
+
     function renderBooks() {
         unreadBooksList.innerHTML = '';
         readBooksList.innerHTML = '';
@@ -40,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bookYear.innerText = `Tahun: ${book.year}`;
 
             const bookDate = document.createElement('p');
-            bookDate.innerText = `Tanggal Terakhir Baca: ${book.date}`;
+            bookDate.innerText = `Tanggal Terakhir Baca: ${formatDate(book.date)}`;
 
             const bookStatus = document.createElement('button');
             bookStatus.innerText = book.isComplete ? 'Belum Selesai' : 'Selesai';
