@@ -8,19 +8,19 @@
 }
 
 .header {
-    background-color: #0D1B2A;
-    color: white;
+    background-color: #253237;
+    color: #7D938A;
     padding: 19px;
     text-align: center;
     top: 0;
     width: 100%;
     z-index: 1000;
     height: fit-content;
-    font-family: "Kanit", sans-serif;
+    font-family: "Kanit", sans-serif, bold, 1000;
 }
 
 .nav {
-    background-color: #415A77;
+    background-color: #5C6B73;
     padding: 10px;
     text-align: center;
     top: 80px;
@@ -43,17 +43,17 @@
 }
 
 .nav ul li a {
-    color: #E0E1DD;
+    color: #E0FBFC;
     text-decoration: none;
 }
 
-main {
+.main {
     flex: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     padding: 20px;
-    background-color: #E0E1DD;
     font-family: "Nunito", sans-serif;
+    margin: 0 10%;
 }
 
 .content {
@@ -65,18 +65,62 @@ main {
 }
 
 form {
-    background-color: #6cacff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid brown;
+    border: 5px solid #353535;
     text-align: justify ;
-    
 }
 
+form .input,
+form .input_inline {
+    margin-bottom: 15px;
+}
+
+form .input label,
+form .input_inline label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form .input input,
+form .input_inline input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #415A77;
+    border-radius: 5px;
+}
+
+form .input_inline {
+    display: flex;
+    align-items: center;
+}
+
+form .input_inline label {
+    margin-right: 10px;
+}
+
+form .input_inline input {
+    width: auto;
+}
+
+form button {
+    background-color: #406E8E;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #161925;
+}
+
+
 .footer {
-    background-color: #39393a;
+    background-color: #253237;
     color: white;
     text-align: center;
     padding: 10px;
@@ -96,6 +140,24 @@ form {
 
 .footer .social-links a:hover {
     text-decoration: underline;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#backToTop:hover {
+    background-color: #0056b3;
 }
 
 @media (max-width: 600px) {
