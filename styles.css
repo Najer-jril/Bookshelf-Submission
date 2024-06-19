@@ -105,6 +105,7 @@ button {
     background-color: #406E8E;
     color: white;
     border: none;
+    margin-top: 10px;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -141,8 +142,23 @@ button:hover {
 }
 
 .book-item button:hover {
-    background-color: #0056b3;
+    background-color: #00244b;
 }
+
+.book-item .deleteButton {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.book-item .deleteButton:hover {
+    background-color: #310000;
+}
+
 
 .footer {
     background-color: #253237;
