@@ -28,11 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return date.toLocaleDateString('id-ID', options);
     }
 
-    function renderBooks() {
+    function renderBooks(filteredBooks = books) {
         unreadBooksList.innerHTML = '';
         readBooksList.innerHTML = '';
 
-        books.forEach((book, index) => {
+        let hasUnreadBooks = false;
+        let hasReadBooks = false;
+
+        filteredBooks.forEach((book, index) => {
             const bookItem = document.createElement('div');
             bookItem.classList.add('book-item');
 
@@ -49,6 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
             bookDate.innerText = `Tanggal Terakhir Baca: ${formatDate(book.date)}`;
 
             const bookStatus = document.createElement('button');
+            bookStatus.classList.add('status-button');
+            bookStatus.style.backgroundColor = book.isComplete ? 'blue' : 'blue';
             bookStatus.innerText = book.isComplete ? 'Belum Selesai' : 'Selesai';
             bookStatus.addEventListener('click', () => {
                 book.isComplete = !book.isComplete;
@@ -57,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const deleteButton = document.createElement('button');
-            deleteButton.classList.add('deleteButton');
+            deleteButton.classList.add('delete-button');
+            deleteButton.style.backgroundColor = 'red';
             deleteButton.innerText = 'Hapus';
             deleteButton.addEventListener('click', () => {
                 deleteBook(index);
@@ -67,16 +73,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (book.isComplete) {
                 readBooksList.appendChild(bookItem);
+                hasReadBooks = true;
             } else {
                 unreadBooksList.appendChild(bookItem);
+                hasUnreadBooks = true;
             }
         });
+
+        if (!hasUnreadBooks) {
+            const noBooksMessage = document.createElement('p');
+            noBooksMessage.innerText = 'Tidak ada buku yang belum selesai dibaca berjudul yang seperti anda cari';
+            unreadBooksList.appendChild(noBooksMessage);
+        }
+
+        if (!hasReadBooks) {
+            const noBooksMessage = document.createElement('p');
+            noBooksMessage.innerText = 'Tidak ada buku yang sudah selesai dibaca berjudul yang seperti anda cari';
+            readBooksList.appendChild(noBooksMessage);
+        }
     }
 
     inputBookForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const id = +new Date()
+        const id = +new Date();
         const title = document.getElementById('inputBookTitle').value;
         const author = document.getElementById('inputBookAuthor').value;
         const year = parseInt(document.getElementById('inputBookYear').value, 10);
@@ -103,13 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const filteredBooks = books.filter(book => book.title.toLowerCase().includes(searchTitle));
 
         if (searchTitle) {
-            if (filteredBooks.length) {
-                books = filteredBooks;
-                renderBooks();
-                books = JSON.parse(localStorage.getItem('books')) || [];
-            } else {
-                alert('Buku tidak ditemukan');
-            }
+            renderBooks(filteredBooks);
         } else {
             alert('Silakan masukkan judul buku yang ingin dicari');
         }
