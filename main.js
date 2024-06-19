@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const bookStatus = document.createElement('button');
             bookStatus.classList.add('status-button');
-            bookStatus.style.backgroundColor = book.isComplete ? 'blue' : 'blue';
             bookStatus.innerText = book.isComplete ? 'Belum Selesai' : 'Selesai';
             bookStatus.addEventListener('click', () => {
                 book.isComplete = !book.isComplete;
@@ -63,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const deleteButton = document.createElement('button');
             deleteButton.classList.add('delete-button');
-            deleteButton.style.backgroundColor = 'red';
             deleteButton.innerText = 'Hapus';
             deleteButton.addEventListener('click', () => {
                 deleteBook(index);
@@ -125,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (searchTitle) {
             renderBooks(filteredBooks);
         } else {
-            alert('Silakan masukkan judul buku yang ingin dicari');
+            renderBooks(books);
         }
     });
 

@@ -132,31 +132,31 @@ button:hover {
     margin: 0 0 10px 0;
 }
 
-.book-item button {
-    background-color: #007BFF;
+.book-item .status-button {
+    background-color: #2f7bcc;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.book-item button:hover {
-    background-color: #00244b;
+.book-item .status-button:hover {
+    background-color: #002244;
 }
 
-.book-item .deleteButton {
-    background-color: #ff0000;
+.book-item .delete-button {
+    background-color: #d32626;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
-.book-item .deleteButton:hover {
-    background-color: #310000;
+.book-item .delete-button:hover {
+    background-color: #4b0000;
 }
 
 
