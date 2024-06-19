@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = +new Date()
         const title = document.getElementById('inputBookTitle').value;
         const author = document.getElementById('inputBookAuthor').value;
-        const year = document.getElementById('inputBookYear').value;
+        const year = parseInt(document.getElementById('inputBookYear').value, 10);
         const date = document.getElementById('inputBookDate').value;
         const isComplete = document.getElementById('inputBookIsComplete').checked;
 
