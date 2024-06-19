@@ -8,8 +8,8 @@
 }
 
 .header {
-    background-color: #253237;
-    color: #7D938A;
+    background-color: #272932;
+    color: #E7ECEF;
     padding: 19px;
     text-align: center;
     top: 0;
@@ -65,7 +65,7 @@
 }
 
 .content {
-    background-color: #ffffff;
+    background-color: #E7ECEF;
     padding: 20px;
     border-radius: 8px;
     border: 2px solid #353535;
@@ -102,7 +102,7 @@
 }
 
 button {
-    background-color: #406E8E;
+    background-color: #0F7173;
     color: white;
     border: none;
     margin-top: 10px;
@@ -161,7 +161,7 @@ button:hover {
 
 
 .footer {
-    background-color: #253237;
+    background-color: #272932;
     color: white;
     text-align: center;
     padding: 10px;
