@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const filteredBooks = books.filter(book => book.title.toLowerCase().includes(searchTitle));
 
         if (searchTitle) {
-            renderBooks(filteredBooks);
+            renderBooks();
         } else {
             renderBooks(books);
         }
