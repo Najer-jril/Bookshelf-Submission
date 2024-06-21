@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Afacad:ital@1&family=DM+Serif+Text:ital@0;1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    
+        <title>TO-DO List</title>
+</head>
+<body>
+    <div class="header">
+        <h1>TO-DO List</h1>
+    </div>
+
+    <div class="nav">
+        <ul>
+            <li><a href="#add_Act">Tambah Kegiatan</a></li>
+            <li><a href="#list_Act">List Buku</a></li>
+        </ul>
+    </div>
+
+
+    <div class="main">
+        <section id="add_Act" class="section">
+            <h2>Masukkan Kegiatan anda</h2>
+            <form id="inputActivity" class="content">
+                <div class="input">
+                    <label for="inputActivityTitle">Nama Kegiatan</label>
+                    <input id="inputActivityTitle" type="text" required>
+                </div>
+                <div class="input">
+                    <label for="inputActivityDescription">Deskripsi Kegiatan</label>
+                    <input id="inputActivityDescription" type="text" required>
+                </div>
+                <div class="input">
+                    <label for="inputActivityStart">Tanggal Mulai Kegiatan</label>
+                    <input id="inputActivityStart" type="date" required>
+                </div>
+                <div class="input">
+                    <label for="inputActivityEnd">Tanggal Selesai Kegiatan</label>
+                    <input id="inputActivityEnd" type="date" required>
+                </div>
+                <button id="activitySubmit" type="submit">Tambahkan Kegiatan Anda</button>
+            </form>
+        </section>
+
+        <section id="search_Act" class="section">
+            <h2>Cari Kegiatan Anda</h2>
+            <form id="searchAct" class="content">
+                <div class="input">
+                    <label for="searchActivity">Nama Kegiatan</label>
+                    <input id="searchActivity" type="text">
+                    <button id="searchSubmit" type="submit">Cari</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="list_Act" class="section">
+            <h2>Daftar Kegiatan Anda</h2>
+            <div class="content">
+                <h3>Belum Selesai</h3>
+                <div id="unfinishActList"></div>
+            </div>
+            <div class="content">
+                <h3>Selesai</h3>
+                <div id="finishActList"></div>
+            </div>
+        </section>
+    </div>
+    
+    <button id="backToTop" onclick="scrollToTop()">Kembali Ke Atas</button>
+
+    <footer class="footer">
+        <p>Kontak Penulis</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/na.jrill" target="_blank">Instagram</a>
+            <a href="https://github.com/Najer-jril" target="_blank">GitHub</a>
+            <p>Ditujukan Untuk Menyelesaikan Submission.</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

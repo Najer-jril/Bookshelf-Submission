@@ -65,10 +65,9 @@
 }
 
 .content {
-    background-color: #E7ECEF;
     padding: 20px;
     border-radius: 8px;
-    border: 2px solid #353535;
+    border: 2px solid #000000;
     margin-bottom: 20px;
 }
 
